@@ -3,7 +3,7 @@ import React from 'react'
 export default function SignUp() {
   return (
     <>
-        <div className=" flex justify-between">
+        <div className="md:mt-24 flex justify-around ">
           <div className="w-1/3 bg-[url('https://drive.google.com/uc?export=view&id=15NNSgvi-ALV8A1F1OCPJXbYDzXTc8fG0')] bg-cover  bg-no-repeat bg-center">
             <h5>Find the job <br /> made for you.</h5>
             <h2>Browse over 130K jobs at top companies and <br /> fast-growing startups.</h2>
