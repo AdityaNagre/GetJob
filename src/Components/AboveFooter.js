@@ -4,7 +4,7 @@ export default function AboveFooter() {
   return (
     <>
     <div className='hidden md:block'>
-      <div className=' flex justify-between pl-10 pr-10 mt-12 md:pl-40 md:pr-20 items-center ml-3 mr-3 md:ml-24 md:mr-24 md:mb-28'>
+      <div className=' flex justify-between pl-10 pr-10 mt-12 md:mt-28 md:pl-40 md:pr-20 items-center ml-3 mr-3 md:ml-24 md:mr-24 md:mb-28'>
           <div className='text-xl font-semibold  md:text-5xl md:font-bold'>
               <p>Aspiring candidates,</p>
               <p className='mb-3'>inspiring companies</p>

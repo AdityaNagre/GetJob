@@ -10,8 +10,8 @@ export default function SliderPlay() {
         slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: true,
-        speed: 3000,
-        autoplaySpeed: 3000,
+        speed: 1500,
+        autoplaySpeed: 1500,
         cssEase: "linear",
         pauseOnHover: false,
         responsive: [
