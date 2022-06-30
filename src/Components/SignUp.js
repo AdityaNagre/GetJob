@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 
 export default function SignUp() {
+  const [alert, setalert] = useState(false)
   const [signUpData, setsignUpData] = useState({
     name:"",
     email:"",
@@ -18,6 +19,7 @@ export default function SignUp() {
     e.preventDefault();
     const {name, email, address}=signUpData
 
+    if(name && email ){
     const res= await fetch("https://getjobs-b7cb8-default-rtdb.firebaseio.com/signupdata.json",
     {
       method:"POST",
@@ -32,6 +34,7 @@ export default function SignUp() {
     })
 
     if(res){
+      console.log(res)
       setsignUpData({
         name:"",
         email:"",
@@ -39,16 +42,22 @@ export default function SignUp() {
       })
       window.location.href="https://jobs-page2.vercel.app/";
     }
-    
-    
   }
-
+  else{
+    setalert(true) 
+  }
+  }
 
   return (
     <>
-        <div className="flex justify-around ">
+        <div >
+          {alert && <div className="p-4 w-1/2 mx-auto mt-3 mb-2 text-center text-md text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800">
+            <span className="font-medium">Name and Email is required</span>
+        </div>}
+        </div>
+        <div className="flex justify-around">
             <section className="text-gray-600 body-font relative">
-            <div className="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
+            <div className="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
               <div className="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
                 <iframe width="100%" height="100%" className="absolute inset-0" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed" style={{"filter": "grayscale(1) contrast(1.2) opacity(0.4)"}}></iframe>
                 <div className="bg-white relative flex flex-wrap py-6 rounded shadow-md">
